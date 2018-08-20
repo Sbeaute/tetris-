@@ -5,10 +5,17 @@
   src: url('./pixelfont.ttf');
 }
 body {
-   font-family: 'pixelfont';
-   color:black;
+        font-family: 'pixelfont';
+        color:black;
+        //background: #202028;
+        color: #fff;
+        font-size: 2em;
+        text-align: center;
 }
-
+canvas {
+        border: solid .2em #fff;
+        height: 90vh;
+      }
 * {
   box-sizing: border-box;
 }
