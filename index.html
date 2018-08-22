@@ -15,7 +15,7 @@
     <body>
       <h1>Tetris</h1>
       <h2>Instructions</h2>
-      <p>Start the game on the lowest level.Move the tetrominoes left and right with the arrow keys or buttons.
+      <p>Start the game on the lowest level. Move the tetrominoes left and right with the arrow keys or buttons.
 Understand the different tetrominoes.Use the action button to rotate the tetrominoes to fit holes.
 Complete lines to gain points and raise the level.Ready now <em>"Game On".</em></p>
 <!-- <a class ="btn btn-secondary" id = "start"> start</a> -->
@@ -24,7 +24,7 @@ Complete lines to gain points and raise the level.Ready now <em>"Game On".</em><
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content">
     <div class="container">
       <h1>Sign Up</h1>
       <p>First timer..please fill in this form to create a user account.</p>
@@ -32,11 +32,12 @@ Complete lines to gain points and raise the level.Ready now <em>"Game On".</em><
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="email" name= "credentials[email]"required>
 
+
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="password" name="credentials[password]" required>
+      <input type="password" placeholder="password" name="credentials[password]">
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="credentials[password_confirmation]"required>
+      <input type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
 
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -55,16 +56,17 @@ Complete lines to gain points and raise the level.Ready now <em>"Game On".</em><
 
 <div id="id02" class="modal">
   <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content">
     <div class="container">
       <h1>Sign In</h1>
       <p>Please fill in this form to sign into Tetris .</p>
       <hr>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Email" name= "credentials[email]"required>
+      <input type="text" placeholder="Email" name= "credentials[email]">
+      <input type="submit" value="Sign in">
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Password" name="credentials[password]" required>
+      <input type="password" placeholder="Password" name="credentials[password]">
 
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -80,12 +82,12 @@ Complete lines to gain points and raise the level.Ready now <em>"Game On".</em><
   </form>
 </div>
 <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Sign Out</button>
-<audio loop autoplay>
+<!-- <audio loop autoplay>
   <source src="theme.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
 <div id="id03" class="modal">
   <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content">
     <div class="container">
       <h1>Sign Out</h1>
       <p>Leaving so soon ? please fill in this form to sign out.</p>
@@ -93,13 +95,15 @@ Complete lines to gain points and raise the level.Ready now <em>"Game On".</em><
  <div class="clearfix">
         <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="submit" class="signupbtn">Sign Out</button>
+
       </div>
     </div>
   </form>
-  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/488101419&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </div>
-<div id="score"> score</div>
+<div class = "container text-center" id = "gameboard">
+<!-- <div id="score"> score</div>
     <canvas id="tetris" width="240" height="400"></canvas>
-    <script src="tetris.js"></script>
+    <script src="tetris.js"></script> -->
+</div>
 </body>
 </html>

@@ -26,8 +26,8 @@ const signInSuccess = function (data) {
   $('#sign-in').css('display', 'none')
   console.log('signInSuccess ran. Data is :', data)
   $('#start').css('display', 'block')
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
 }
 
 const signInFailure = function (error) {
@@ -40,6 +40,7 @@ const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran and nothing was returned!')
+  $('.modal-body').html('You have sign out of game')
   $('#sign-Out').css('display', 'none')
   store.user = null
 }
@@ -55,6 +56,7 @@ const creategameSuccess = function (data) {
   store.game = data.game
   store.game.id = data.game.id
   $('#gameboard').css('display', 'block')
+  $('.modal-body').html('You have create game ready player 1')
 }
 const getgamesSuccess = function (data) {
   console.log('getgamessuccess ran. Data is :', data)
@@ -68,6 +70,7 @@ const getgamesSuccess = function (data) {
 // }
 const updategamesSuccess = function (data) {
   console.log('updategamesSuccess ran. Data is :', data)
+  $('.modal-body').html('You have update tetris game ')
   store.game = data.games
   store.game.id = data.game.id
 }
