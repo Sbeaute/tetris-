@@ -50,15 +50,16 @@ const getgames = function () {
     }
   })
 }
-// const deletegame = function () {
-//   return $.ajax({
-//     url: config.apiUrl + '/games',
-//     method: 'DELETE',
-//     header: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const deletegame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'DELETE',
+    dataType: 'application/json; charset=utf-8',
+    header: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 const updategames = function (id, index, value, over) {
   return $.ajax({
     url: config.apiUrl + `/games/${id}`,
@@ -83,6 +84,6 @@ module.exports = {
   signOut,
   getgames,
   creategame,
-  // deletegame,
+  deletegame,
   updategames
 }

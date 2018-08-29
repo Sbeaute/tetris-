@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('./store')
+// const api = require('./api')
+const events = require('./events')
 
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
@@ -28,6 +30,7 @@ const signInSuccess = function (data) {
   $('#start').css('display', 'block')
   document.body.scrollTop = 0
   document.documentElement.scrollTop = 0
+  $('#start').on('click', console.log('Click'))
 }
 
 const signInFailure = function (error) {
@@ -63,11 +66,11 @@ const getgamesSuccess = function (data) {
   store.game = data.game
   store.game.id = data.game.id
 }
-// const deletegameSuccess = function (data) {
-//   console.log('deletegameSuccess ran. Data is :', data)
-//   store.game = data.game
-//   store.game.id = data.game.id
-// }
+const deletegameSuccess = function (data) {
+  console.log('deletegameSuccess ran. Data is :', data)
+  store.game = data.game
+  store.game.id = data.game.id
+}
 const updategamesSuccess = function (data) {
   console.log('updategamesSuccess ran. Data is :', data)
   $('.modal-body').html('You have update tetris game ')
@@ -83,6 +86,6 @@ module.exports = {
   signOutFailure,
   creategameSuccess,
   getgamesSuccess,
-  // deletegameSuccess,
+  deletegameSuccess,
   updategamesSuccess
 }

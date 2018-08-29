@@ -53,16 +53,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
-  $('#start').on('click', oncreategame)
-  $('#ongetgames').on('submit', ongetgames)
-  // $('#ondeletegame').on('submit', ondeletegame)
-  // $('#onupdategame').on('submit', onupdategame)
-  // $('#show-board').on('click', renderBoard)
-}
+
 
 const ongetgames = function (event) {
   event.preventDefault()
@@ -93,7 +84,20 @@ const onupdategame = function (event) {
     .then(ui.updategameSuccess)
     .catch(ui.updategameFailure)
 }
+
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
+  $('#start').on('click', oncreategame)
+  $('#ongetgames').on('submit', ongetgames)
+  // $('#ondeletegame').on('submit', ondeletegame)
+  // $('#onupdategame').on('submit', onupdategame)
+  // $('#show-board').on('click', renderBoard)
+}
+
 module.exports = {
   addHandlers,
-  onupdategame
+  onupdategame,
+  oncreategame
 }
