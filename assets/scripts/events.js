@@ -6,17 +6,6 @@ const store = require('./store')
 const api = require('./api')
 const ui = require('./ui')
 
-// const renderBoard = () => {
-// console.log('hellos')
-//   let table = '<table><tr>'
-//
-//   for(let i = 0; i < 3; i++) {
-//     table += '<td>'+ i + '</td>'
-//   }
-//   table += '</tr></table>'
-//   $('#board').innerHTML = table/
-// }
-
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
@@ -32,6 +21,7 @@ const onSignIn = function (event) {
   // console.log('sign in ran!')
 
   const data = getFormFields(this)
+
   api.signIn(data)
     .then((result) => {
       ui.signInSuccess()
@@ -53,8 +43,6 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-
-
 const ongetgames = function (event) {
   event.preventDefault()
   console.log('get games ran')
@@ -65,17 +53,17 @@ const ongetgames = function (event) {
 const oncreategame = function (event) {
   event.preventDefault()
   console.log('on games ran')
-  api.creategame()
+  api.creategame({game:{}})
     .then(ui.creategameSuccess)
     .catch(ui.creategamesfailure)
 }
-// const ondeletegame = function (event) {
-//   event.preventDefault()
-//   console.log('delete games ran')
-//   api.deletegame()
-//     .then(ui.ondeletegameSuccess)
-//     .catch(ui.ondeletegameFailure)
-// }
+const ondeletegame = function (event) {
+  event.preventDefault()
+  console.log('delete games ran')
+  api.deletegame()
+    .then(ui.ondeletegameSuccess)
+    .catch(ui.ondeletegameFailure)
+}
 const onupdategame = function (event) {
   event.preventDefault()
   console.log('update games ran')
@@ -91,13 +79,14 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#start').on('click', oncreategame)
   $('#ongetgames').on('submit', ongetgames)
-  // $('#ondeletegame').on('submit', ondeletegame)
-  // $('#onupdategame').on('submit', onupdategame)
+  $('#ondeletegame').on('submit', ondeletegame)
+  $('#onupdategame').on('submit', onupdategame)
   // $('#show-board').on('click', renderBoard)
 }
 
 module.exports = {
   addHandlers,
   onupdategame,
-  oncreategame
+  oncreategame,
+  ondeletegame
 }

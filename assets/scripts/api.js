@@ -62,7 +62,7 @@ const deletegame = function () {
 }
 const updategames = function (id, index, value, over) {
   return $.ajax({
-    url: config.apiUrl + `/games/${id}`,
+    url: config.apiUrl + `/games/` + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

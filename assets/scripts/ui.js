@@ -16,6 +16,7 @@ const signUpFailure = function (error) {
   $('#message').text('Error on sign up')
   $('#message').css('background-color', 'red')
   console.error('signUpFailure ran. Error is :', error)
+  $('#message').hide(4000)
 }
 
 const signInSuccess = function (data) {
@@ -30,13 +31,14 @@ const signInSuccess = function (data) {
   $('#start').css('display', 'block')
   document.body.scrollTop = 0
   document.documentElement.scrollTop = 0
-  $('#start').on('click', console.log('Click'))
+  // $('#start').on('click', console.log('Click'))
 }
 
 const signInFailure = function (error) {
   $('#message').text('Error on sign in')
   $('#message').css('background-color', 'red')
   console.error('signInFailure ran. Error is :', error)
+  $('#message').hide(4000)
 }
 
 const signOutSuccess = function () {
